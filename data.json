@@ -100,21 +100,21 @@
       "flights": {
         "tokyo": {
           "hnd": {
-            "priceUsd": null,
-            "airline": null,
-            "link": null
+            "priceUsd": 1983,
+            "airline": "JAL",
+            "link": "https://www.google.com/travel/flights?q=Flights%20from%20SFO%20to%20HND%20on%202026-06-05%20through%202026-06-15%20nonstop"
           },
           "nrt": {
-            "priceUsd": null,
-            "airline": null,
-            "link": null
+            "priceUsd": 1139,
+            "airline": "ZIPAIR Tokyo",
+            "link": "https://www.google.com/travel/flights?q=Flights%20from%20SFO%20to%20NRT%20on%202026-06-05%20through%202026-06-15%20nonstop"
           }
         },
         "osaka": {
           "kix": {
-            "priceUsd": null,
-            "airline": null,
-            "link": null,
+            "priceUsd": 1669,
+            "airline": "United",
+            "link": "https://www.google.com/travel/flights?q=Flights%20from%20SFO%20to%20KIX%20on%202026-06-05%20through%202026-06-15%20nonstop",
             "note": null
           }
         }
@@ -135,7 +135,9 @@
         "value": null,
         "weather": null
       },
-      "notes": []
+      "notes": [
+        "Fare snapshot: Google Flights (nonstop filter). Cheapest shown may be basic economy / excludes bags & seat selection; bag fees may apply. Captured 2026-02-06."
+      ]
     },
     {
       "id": "2026-06-12_2026-06-21",
