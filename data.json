@@ -147,14 +147,14 @@
       "flights": {
         "tokyo": {
           "hnd": {
-            "priceUsd": null,
-            "airline": null,
-            "link": null
+            "priceUsd": 1678,
+            "airline": "ANA",
+            "link": "https://www.google.com/travel/flights?q=Flights%20from%20SFO%20to%20HND%20on%202026-06-12%20through%202026-06-21%20nonstop"
           },
           "nrt": {
-            "priceUsd": null,
-            "airline": null,
-            "link": null
+            "priceUsd": 1113,
+            "airline": "ZIPAIR Tokyo",
+            "link": "https://www.google.com/travel/flights?q=Flights%20from%20SFO%20to%20NRT%20on%202026-06-12%20through%202026-06-21%20nonstop"
           }
         },
         "osaka": {
@@ -182,7 +182,9 @@
         "value": null,
         "weather": null
       },
-      "notes": []
+      "notes": [
+        "Fare snapshot: Google Flights (nonstop filter). Cheapest shown may be basic economy / excludes bags & seat selection; bag fees may apply. Captured 2026-02-06."
+      ]
     },
     {
       "id": "2026-06-12_2026-06-22",
@@ -192,14 +194,14 @@
       "flights": {
         "tokyo": {
           "hnd": {
-            "priceUsd": null,
-            "airline": null,
-            "link": null
+            "priceUsd": 1623,
+            "airline": "ANA",
+            "link": "https://www.google.com/travel/flights?q=Flights%20from%20SFO%20to%20HND%20on%202026-06-12%20through%202026-06-22%20nonstop"
           },
           "nrt": {
-            "priceUsd": null,
-            "airline": null,
-            "link": null
+            "priceUsd": 1092,
+            "airline": "ZIPAIR Tokyo",
+            "link": "https://www.google.com/travel/flights?q=Flights%20from%20SFO%20to%20NRT%20on%202026-06-12%20through%202026-06-22%20nonstop"
           }
         },
         "osaka": {
@@ -227,7 +229,9 @@
         "value": null,
         "weather": null
       },
-      "notes": []
+      "notes": [
+        "Fare snapshot: Google Flights (nonstop filter). Cheapest shown may be basic economy / excludes bags & seat selection; bag fees may apply. Captured 2026-02-06."
+      ]
     },
     {
       "id": "2026-06-19_2026-06-28",
