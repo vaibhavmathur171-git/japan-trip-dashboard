@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "title": "SFO → Japan (June/July) — 9-day trip planner",
+    "updatedAt": "2026-02-06T22:38:00Z",
+    "party": {"adults": 4, "kids": [{"age": 11}, {"age": 6}, {"age": 3}]},
+    "rules": {
+      "departDay": "Friday",
+      "tripLengthDays": 9,
+      "returnDays": ["Sunday", "Monday"],
+      "nonstopOnly": true,
+      "orig": "SFO",
+      "destinations": [
+        {"city": "Tokyo", "airports": ["HND", "NRT"]},
+        {"city": "Osaka", "airports": ["KIX"]}
+      ]
+    },
+    "pollEmbedUrl": null,
+    "commentsEmbedUrl": null
+  },
+  "options": []
+}
