@@ -2,20 +2,858 @@
   "meta": {
     "title": "SFO → Japan (June/July) — 9-day trip planner",
     "updatedAt": "2026-02-06T22:38:00Z",
-    "party": {"adults": 4, "kids": [{"age": 11}, {"age": 6}, {"age": 3}]},
+    "party": {
+      "adults": 4,
+      "kids": [
+        {
+          "age": 11
+        },
+        {
+          "age": 6
+        },
+        {
+          "age": 3
+        }
+      ]
+    },
     "rules": {
       "departDay": "Friday",
       "tripLengthDays": 9,
-      "returnDays": ["Sunday", "Monday"],
+      "returnDays": [
+        "Sunday",
+        "Monday"
+      ],
       "nonstopOnly": true,
       "orig": "SFO",
       "destinations": [
-        {"city": "Tokyo", "airports": ["HND", "NRT"]},
-        {"city": "Osaka", "airports": ["KIX"]}
+        {
+          "city": "Tokyo",
+          "airports": [
+            "HND",
+            "NRT"
+          ]
+        },
+        {
+          "city": "Osaka",
+          "airports": [
+            "KIX"
+          ]
+        }
       ]
     },
     "pollEmbedUrl": null,
     "commentsEmbedUrl": null
   },
-  "options": []
+  "options": [
+    {
+      "id": "2026-06-05_2026-06-14",
+      "departDate": "2026-06-05",
+      "returnDate": "2026-06-14",
+      "pattern": "Fri→Sun",
+      "flights": {
+        "tokyo": {
+          "hnd": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null
+          },
+          "nrt": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null
+          }
+        },
+        "osaka": {
+          "kix": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null,
+            "note": null
+          }
+        }
+      },
+      "weather": {
+        "tokyo": {
+          "tempC": null,
+          "humidityPct": null,
+          "rainNote": null
+        },
+        "osaka": {
+          "tempC": null,
+          "humidityPct": null,
+          "rainNote": null
+        }
+      },
+      "score": {
+        "value": null,
+        "weather": null
+      },
+      "notes": []
+    },
+    {
+      "id": "2026-06-05_2026-06-15",
+      "departDate": "2026-06-05",
+      "returnDate": "2026-06-15",
+      "pattern": "Fri→Mon",
+      "flights": {
+        "tokyo": {
+          "hnd": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null
+          },
+          "nrt": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null
+          }
+        },
+        "osaka": {
+          "kix": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null,
+            "note": null
+          }
+        }
+      },
+      "weather": {
+        "tokyo": {
+          "tempC": null,
+          "humidityPct": null,
+          "rainNote": null
+        },
+        "osaka": {
+          "tempC": null,
+          "humidityPct": null,
+          "rainNote": null
+        }
+      },
+      "score": {
+        "value": null,
+        "weather": null
+      },
+      "notes": []
+    },
+    {
+      "id": "2026-06-12_2026-06-21",
+      "departDate": "2026-06-12",
+      "returnDate": "2026-06-21",
+      "pattern": "Fri→Sun",
+      "flights": {
+        "tokyo": {
+          "hnd": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null
+          },
+          "nrt": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null
+          }
+        },
+        "osaka": {
+          "kix": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null,
+            "note": null
+          }
+        }
+      },
+      "weather": {
+        "tokyo": {
+          "tempC": null,
+          "humidityPct": null,
+          "rainNote": null
+        },
+        "osaka": {
+          "tempC": null,
+          "humidityPct": null,
+          "rainNote": null
+        }
+      },
+      "score": {
+        "value": null,
+        "weather": null
+      },
+      "notes": []
+    },
+    {
+      "id": "2026-06-12_2026-06-22",
+      "departDate": "2026-06-12",
+      "returnDate": "2026-06-22",
+      "pattern": "Fri→Mon",
+      "flights": {
+        "tokyo": {
+          "hnd": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null
+          },
+          "nrt": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null
+          }
+        },
+        "osaka": {
+          "kix": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null,
+            "note": null
+          }
+        }
+      },
+      "weather": {
+        "tokyo": {
+          "tempC": null,
+          "humidityPct": null,
+          "rainNote": null
+        },
+        "osaka": {
+          "tempC": null,
+          "humidityPct": null,
+          "rainNote": null
+        }
+      },
+      "score": {
+        "value": null,
+        "weather": null
+      },
+      "notes": []
+    },
+    {
+      "id": "2026-06-19_2026-06-28",
+      "departDate": "2026-06-19",
+      "returnDate": "2026-06-28",
+      "pattern": "Fri→Sun",
+      "flights": {
+        "tokyo": {
+          "hnd": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null
+          },
+          "nrt": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null
+          }
+        },
+        "osaka": {
+          "kix": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null,
+            "note": null
+          }
+        }
+      },
+      "weather": {
+        "tokyo": {
+          "tempC": null,
+          "humidityPct": null,
+          "rainNote": null
+        },
+        "osaka": {
+          "tempC": null,
+          "humidityPct": null,
+          "rainNote": null
+        }
+      },
+      "score": {
+        "value": null,
+        "weather": null
+      },
+      "notes": []
+    },
+    {
+      "id": "2026-06-19_2026-06-29",
+      "departDate": "2026-06-19",
+      "returnDate": "2026-06-29",
+      "pattern": "Fri→Mon",
+      "flights": {
+        "tokyo": {
+          "hnd": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null
+          },
+          "nrt": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null
+          }
+        },
+        "osaka": {
+          "kix": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null,
+            "note": null
+          }
+        }
+      },
+      "weather": {
+        "tokyo": {
+          "tempC": null,
+          "humidityPct": null,
+          "rainNote": null
+        },
+        "osaka": {
+          "tempC": null,
+          "humidityPct": null,
+          "rainNote": null
+        }
+      },
+      "score": {
+        "value": null,
+        "weather": null
+      },
+      "notes": []
+    },
+    {
+      "id": "2026-06-26_2026-07-05",
+      "departDate": "2026-06-26",
+      "returnDate": "2026-07-05",
+      "pattern": "Fri→Sun",
+      "flights": {
+        "tokyo": {
+          "hnd": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null
+          },
+          "nrt": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null
+          }
+        },
+        "osaka": {
+          "kix": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null,
+            "note": null
+          }
+        }
+      },
+      "weather": {
+        "tokyo": {
+          "tempC": null,
+          "humidityPct": null,
+          "rainNote": null
+        },
+        "osaka": {
+          "tempC": null,
+          "humidityPct": null,
+          "rainNote": null
+        }
+      },
+      "score": {
+        "value": null,
+        "weather": null
+      },
+      "notes": []
+    },
+    {
+      "id": "2026-06-26_2026-07-06",
+      "departDate": "2026-06-26",
+      "returnDate": "2026-07-06",
+      "pattern": "Fri→Mon",
+      "flights": {
+        "tokyo": {
+          "hnd": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null
+          },
+          "nrt": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null
+          }
+        },
+        "osaka": {
+          "kix": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null,
+            "note": null
+          }
+        }
+      },
+      "weather": {
+        "tokyo": {
+          "tempC": null,
+          "humidityPct": null,
+          "rainNote": null
+        },
+        "osaka": {
+          "tempC": null,
+          "humidityPct": null,
+          "rainNote": null
+        }
+      },
+      "score": {
+        "value": null,
+        "weather": null
+      },
+      "notes": []
+    },
+    {
+      "id": "2026-07-03_2026-07-12",
+      "departDate": "2026-07-03",
+      "returnDate": "2026-07-12",
+      "pattern": "Fri→Sun",
+      "flights": {
+        "tokyo": {
+          "hnd": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null
+          },
+          "nrt": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null
+          }
+        },
+        "osaka": {
+          "kix": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null,
+            "note": null
+          }
+        }
+      },
+      "weather": {
+        "tokyo": {
+          "tempC": null,
+          "humidityPct": null,
+          "rainNote": null
+        },
+        "osaka": {
+          "tempC": null,
+          "humidityPct": null,
+          "rainNote": null
+        }
+      },
+      "score": {
+        "value": null,
+        "weather": null
+      },
+      "notes": []
+    },
+    {
+      "id": "2026-07-03_2026-07-13",
+      "departDate": "2026-07-03",
+      "returnDate": "2026-07-13",
+      "pattern": "Fri→Mon",
+      "flights": {
+        "tokyo": {
+          "hnd": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null
+          },
+          "nrt": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null
+          }
+        },
+        "osaka": {
+          "kix": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null,
+            "note": null
+          }
+        }
+      },
+      "weather": {
+        "tokyo": {
+          "tempC": null,
+          "humidityPct": null,
+          "rainNote": null
+        },
+        "osaka": {
+          "tempC": null,
+          "humidityPct": null,
+          "rainNote": null
+        }
+      },
+      "score": {
+        "value": null,
+        "weather": null
+      },
+      "notes": []
+    },
+    {
+      "id": "2026-07-10_2026-07-19",
+      "departDate": "2026-07-10",
+      "returnDate": "2026-07-19",
+      "pattern": "Fri→Sun",
+      "flights": {
+        "tokyo": {
+          "hnd": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null
+          },
+          "nrt": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null
+          }
+        },
+        "osaka": {
+          "kix": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null,
+            "note": null
+          }
+        }
+      },
+      "weather": {
+        "tokyo": {
+          "tempC": null,
+          "humidityPct": null,
+          "rainNote": null
+        },
+        "osaka": {
+          "tempC": null,
+          "humidityPct": null,
+          "rainNote": null
+        }
+      },
+      "score": {
+        "value": null,
+        "weather": null
+      },
+      "notes": []
+    },
+    {
+      "id": "2026-07-10_2026-07-20",
+      "departDate": "2026-07-10",
+      "returnDate": "2026-07-20",
+      "pattern": "Fri→Mon",
+      "flights": {
+        "tokyo": {
+          "hnd": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null
+          },
+          "nrt": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null
+          }
+        },
+        "osaka": {
+          "kix": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null,
+            "note": null
+          }
+        }
+      },
+      "weather": {
+        "tokyo": {
+          "tempC": null,
+          "humidityPct": null,
+          "rainNote": null
+        },
+        "osaka": {
+          "tempC": null,
+          "humidityPct": null,
+          "rainNote": null
+        }
+      },
+      "score": {
+        "value": null,
+        "weather": null
+      },
+      "notes": []
+    },
+    {
+      "id": "2026-07-17_2026-07-26",
+      "departDate": "2026-07-17",
+      "returnDate": "2026-07-26",
+      "pattern": "Fri→Sun",
+      "flights": {
+        "tokyo": {
+          "hnd": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null
+          },
+          "nrt": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null
+          }
+        },
+        "osaka": {
+          "kix": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null,
+            "note": null
+          }
+        }
+      },
+      "weather": {
+        "tokyo": {
+          "tempC": null,
+          "humidityPct": null,
+          "rainNote": null
+        },
+        "osaka": {
+          "tempC": null,
+          "humidityPct": null,
+          "rainNote": null
+        }
+      },
+      "score": {
+        "value": null,
+        "weather": null
+      },
+      "notes": []
+    },
+    {
+      "id": "2026-07-17_2026-07-27",
+      "departDate": "2026-07-17",
+      "returnDate": "2026-07-27",
+      "pattern": "Fri→Mon",
+      "flights": {
+        "tokyo": {
+          "hnd": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null
+          },
+          "nrt": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null
+          }
+        },
+        "osaka": {
+          "kix": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null,
+            "note": null
+          }
+        }
+      },
+      "weather": {
+        "tokyo": {
+          "tempC": null,
+          "humidityPct": null,
+          "rainNote": null
+        },
+        "osaka": {
+          "tempC": null,
+          "humidityPct": null,
+          "rainNote": null
+        }
+      },
+      "score": {
+        "value": null,
+        "weather": null
+      },
+      "notes": []
+    },
+    {
+      "id": "2026-07-24_2026-08-02",
+      "departDate": "2026-07-24",
+      "returnDate": "2026-08-02",
+      "pattern": "Fri→Sun",
+      "flights": {
+        "tokyo": {
+          "hnd": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null
+          },
+          "nrt": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null
+          }
+        },
+        "osaka": {
+          "kix": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null,
+            "note": null
+          }
+        }
+      },
+      "weather": {
+        "tokyo": {
+          "tempC": null,
+          "humidityPct": null,
+          "rainNote": null
+        },
+        "osaka": {
+          "tempC": null,
+          "humidityPct": null,
+          "rainNote": null
+        }
+      },
+      "score": {
+        "value": null,
+        "weather": null
+      },
+      "notes": []
+    },
+    {
+      "id": "2026-07-24_2026-08-03",
+      "departDate": "2026-07-24",
+      "returnDate": "2026-08-03",
+      "pattern": "Fri→Mon",
+      "flights": {
+        "tokyo": {
+          "hnd": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null
+          },
+          "nrt": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null
+          }
+        },
+        "osaka": {
+          "kix": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null,
+            "note": null
+          }
+        }
+      },
+      "weather": {
+        "tokyo": {
+          "tempC": null,
+          "humidityPct": null,
+          "rainNote": null
+        },
+        "osaka": {
+          "tempC": null,
+          "humidityPct": null,
+          "rainNote": null
+        }
+      },
+      "score": {
+        "value": null,
+        "weather": null
+      },
+      "notes": []
+    },
+    {
+      "id": "2026-07-31_2026-08-09",
+      "departDate": "2026-07-31",
+      "returnDate": "2026-08-09",
+      "pattern": "Fri→Sun",
+      "flights": {
+        "tokyo": {
+          "hnd": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null
+          },
+          "nrt": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null
+          }
+        },
+        "osaka": {
+          "kix": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null,
+            "note": null
+          }
+        }
+      },
+      "weather": {
+        "tokyo": {
+          "tempC": null,
+          "humidityPct": null,
+          "rainNote": null
+        },
+        "osaka": {
+          "tempC": null,
+          "humidityPct": null,
+          "rainNote": null
+        }
+      },
+      "score": {
+        "value": null,
+        "weather": null
+      },
+      "notes": []
+    },
+    {
+      "id": "2026-07-31_2026-08-10",
+      "departDate": "2026-07-31",
+      "returnDate": "2026-08-10",
+      "pattern": "Fri→Mon",
+      "flights": {
+        "tokyo": {
+          "hnd": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null
+          },
+          "nrt": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null
+          }
+        },
+        "osaka": {
+          "kix": {
+            "priceUsd": null,
+            "airline": null,
+            "link": null,
+            "note": null
+          }
+        }
+      },
+      "weather": {
+        "tokyo": {
+          "tempC": null,
+          "humidityPct": null,
+          "rainNote": null
+        },
+        "osaka": {
+          "tempC": null,
+          "humidityPct": null,
+          "rainNote": null
+        }
+      },
+      "score": {
+        "value": null,
+        "weather": null
+      },
+      "notes": []
+    }
+  ]
 }
