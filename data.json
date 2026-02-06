@@ -53,21 +53,21 @@
       "flights": {
         "tokyo": {
           "hnd": {
-            "priceUsd": null,
-            "airline": null,
-            "link": null
+            "priceUsd": 2091,
+            "airline": "JAL",
+            "link": "https://www.google.com/travel/flights?q=Flights%20from%20SFO%20to%20HND%20on%202026-06-05%20through%202026-06-14%20nonstop"
           },
           "nrt": {
-            "priceUsd": null,
-            "airline": null,
-            "link": null
+            "priceUsd": 1181,
+            "airline": "ZIPAIR Tokyo",
+            "link": "https://www.google.com/travel/flights?q=Flights%20from%20SFO%20to%20NRT%20on%202026-06-05%20through%202026-06-14%20nonstop"
           }
         },
         "osaka": {
           "kix": {
-            "priceUsd": null,
-            "airline": null,
-            "link": null,
+            "priceUsd": 1697,
+            "airline": "United",
+            "link": "https://www.google.com/travel/flights?q=Flights%20from%20SFO%20to%20KIX%20on%202026-06-05%20through%202026-06-14%20nonstop",
             "note": null
           }
         }
@@ -76,19 +76,21 @@
         "tokyo": {
           "tempC": null,
           "humidityPct": null,
-          "rainNote": null
+          "rainNote": "Shoulder of rainy season"
         },
         "osaka": {
           "tempC": null,
           "humidityPct": null,
-          "rainNote": null
+          "rainNote": "Shoulder of rainy season"
         }
       },
       "score": {
         "value": null,
         "weather": null
       },
-      "notes": []
+      "notes": [
+        "Fare snapshot: Google Flights (nonstop filter), captured 2026-02-06. Prices shown are for 1 adult round-trip incl. taxes/fees."
+      ]
     },
     {
       "id": "2026-06-05_2026-06-15",
@@ -121,12 +123,12 @@
         "tokyo": {
           "tempC": null,
           "humidityPct": null,
-          "rainNote": null
+          "rainNote": "Shoulder of rainy season"
         },
         "osaka": {
           "tempC": null,
           "humidityPct": null,
-          "rainNote": null
+          "rainNote": "Shoulder of rainy season"
         }
       },
       "score": {
@@ -166,12 +168,12 @@
         "tokyo": {
           "tempC": null,
           "humidityPct": null,
-          "rainNote": null
+          "rainNote": "Higher rain risk (tsuyu season window)"
         },
         "osaka": {
           "tempC": null,
           "humidityPct": null,
-          "rainNote": null
+          "rainNote": "Higher rain risk (tsuyu season window)"
         }
       },
       "score": {
@@ -211,12 +213,12 @@
         "tokyo": {
           "tempC": null,
           "humidityPct": null,
-          "rainNote": null
+          "rainNote": "Higher rain risk (tsuyu season window)"
         },
         "osaka": {
           "tempC": null,
           "humidityPct": null,
-          "rainNote": null
+          "rainNote": "Higher rain risk (tsuyu season window)"
         }
       },
       "score": {
@@ -256,12 +258,12 @@
         "tokyo": {
           "tempC": null,
           "humidityPct": null,
-          "rainNote": null
+          "rainNote": "Higher rain risk (tsuyu season window)"
         },
         "osaka": {
           "tempC": null,
           "humidityPct": null,
-          "rainNote": null
+          "rainNote": "Higher rain risk (tsuyu season window)"
         }
       },
       "score": {
@@ -301,12 +303,12 @@
         "tokyo": {
           "tempC": null,
           "humidityPct": null,
-          "rainNote": null
+          "rainNote": "Higher rain risk (tsuyu season window)"
         },
         "osaka": {
           "tempC": null,
           "humidityPct": null,
-          "rainNote": null
+          "rainNote": "Higher rain risk (tsuyu season window)"
         }
       },
       "score": {
@@ -346,12 +348,12 @@
         "tokyo": {
           "tempC": null,
           "humidityPct": null,
-          "rainNote": null
+          "rainNote": "Higher rain risk (tsuyu season window)"
         },
         "osaka": {
           "tempC": null,
           "humidityPct": null,
-          "rainNote": null
+          "rainNote": "Higher rain risk (tsuyu season window)"
         }
       },
       "score": {
@@ -391,12 +393,12 @@
         "tokyo": {
           "tempC": null,
           "humidityPct": null,
-          "rainNote": null
+          "rainNote": "Higher rain risk (tsuyu season window)"
         },
         "osaka": {
           "tempC": null,
           "humidityPct": null,
-          "rainNote": null
+          "rainNote": "Higher rain risk (tsuyu season window)"
         }
       },
       "score": {
@@ -436,12 +438,12 @@
         "tokyo": {
           "tempC": null,
           "humidityPct": null,
-          "rainNote": null
+          "rainNote": "Higher rain risk (tsuyu season window)"
         },
         "osaka": {
           "tempC": null,
           "humidityPct": null,
-          "rainNote": null
+          "rainNote": "Higher rain risk (tsuyu season window)"
         }
       },
       "score": {
@@ -481,12 +483,12 @@
         "tokyo": {
           "tempC": null,
           "humidityPct": null,
-          "rainNote": null
+          "rainNote": "Higher rain risk (tsuyu season window)"
         },
         "osaka": {
           "tempC": null,
           "humidityPct": null,
-          "rainNote": null
+          "rainNote": "Higher rain risk (tsuyu season window)"
         }
       },
       "score": {
@@ -526,12 +528,12 @@
         "tokyo": {
           "tempC": null,
           "humidityPct": null,
-          "rainNote": null
+          "rainNote": "Higher rain risk (tsuyu season window)"
         },
         "osaka": {
           "tempC": null,
           "humidityPct": null,
-          "rainNote": null
+          "rainNote": "Higher rain risk (tsuyu season window)"
         }
       },
       "score": {
@@ -571,12 +573,12 @@
         "tokyo": {
           "tempC": null,
           "humidityPct": null,
-          "rainNote": null
+          "rainNote": "Higher rain risk (tsuyu season window)"
         },
         "osaka": {
           "tempC": null,
           "humidityPct": null,
-          "rainNote": null
+          "rainNote": "Higher rain risk (tsuyu season window)"
         }
       },
       "score": {
@@ -616,12 +618,12 @@
         "tokyo": {
           "tempC": null,
           "humidityPct": null,
-          "rainNote": null
+          "rainNote": "Hot/humid; rain risk moderate"
         },
         "osaka": {
           "tempC": null,
           "humidityPct": null,
-          "rainNote": null
+          "rainNote": "Hot/humid; rain risk moderate"
         }
       },
       "score": {
@@ -661,12 +663,12 @@
         "tokyo": {
           "tempC": null,
           "humidityPct": null,
-          "rainNote": null
+          "rainNote": "Hot/humid; rain risk moderate"
         },
         "osaka": {
           "tempC": null,
           "humidityPct": null,
-          "rainNote": null
+          "rainNote": "Hot/humid; rain risk moderate"
         }
       },
       "score": {
@@ -706,12 +708,12 @@
         "tokyo": {
           "tempC": null,
           "humidityPct": null,
-          "rainNote": null
+          "rainNote": "Hot/humid; rain risk moderate"
         },
         "osaka": {
           "tempC": null,
           "humidityPct": null,
-          "rainNote": null
+          "rainNote": "Hot/humid; rain risk moderate"
         }
       },
       "score": {
@@ -751,12 +753,12 @@
         "tokyo": {
           "tempC": null,
           "humidityPct": null,
-          "rainNote": null
+          "rainNote": "Hot/humid; rain risk moderate"
         },
         "osaka": {
           "tempC": null,
           "humidityPct": null,
-          "rainNote": null
+          "rainNote": "Hot/humid; rain risk moderate"
         }
       },
       "score": {
@@ -796,12 +798,12 @@
         "tokyo": {
           "tempC": null,
           "humidityPct": null,
-          "rainNote": null
+          "rainNote": "Hot/humid; rain risk moderate"
         },
         "osaka": {
           "tempC": null,
           "humidityPct": null,
-          "rainNote": null
+          "rainNote": "Hot/humid; rain risk moderate"
         }
       },
       "score": {
@@ -841,12 +843,12 @@
         "tokyo": {
           "tempC": null,
           "humidityPct": null,
-          "rainNote": null
+          "rainNote": "Hot/humid; rain risk moderate"
         },
         "osaka": {
           "tempC": null,
           "humidityPct": null,
-          "rainNote": null
+          "rainNote": "Hot/humid; rain risk moderate"
         }
       },
       "score": {

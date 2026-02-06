@@ -74,9 +74,9 @@
     <div class="grid">
       <section class="card">
         <h2>Candidate date windows</h2>
-        <div class="note">This will populate with a ranked list (best value / best weather) once live fare checks are completed.</div>
+        <div class="note">Each option is Fri departure with a 9‑day trip returning Sun or Mon. Airfare shown is the lowest nonstop fare captured at lookup time (1 adult, round-trip, incl. required taxes/fees). Click through to verify live.</div>
         <div id="options" class="opts"></div>
-        <div class="footer">Prices will be captured at lookup time and linked for verification. They can change quickly.</div>
+        <div class="footer">Prices can change quickly. We’ll refresh the sweep as we narrow down.</div>
       </section>
 
       <aside class="card">
@@ -97,22 +97,59 @@
   </div>
 
   <script>
+    function fmtUsd(x){
+      if (x === null || x === undefined) return '—';
+      return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(x);
+    }
+
+    function bestTokyo(opt){
+      const c = [];
+      const hnd = opt.flights?.tokyo?.hnd;
+      const nrt = opt.flights?.tokyo?.nrt;
+      if (hnd && typeof hnd.priceUsd === 'number') c.push({airport:'HND', ...hnd});
+      if (nrt && typeof nrt.priceUsd === 'number') c.push({airport:'NRT', ...nrt});
+      if (!c.length) return null;
+      c.sort((a,b)=>a.priceUsd-b.priceUsd);
+      return c[0];
+    }
+
     async function main(){
       const res = await fetch('./data.json', {cache:'no-store'});
       const data = await res.json();
       const opts = document.getElementById('options');
       opts.innerHTML = '';
 
-      if (!data.options || data.options.length === 0) {
+      const options = (data.options || []);
+      if (options.length === 0) {
         const div = document.createElement('div');
         div.className = 'opt';
-        div.innerHTML = `<div class="row"><div class="title">(Working on it)</div><div class="muted">Live fare sweep pending</div></div>
-          <div class="kpi">
-            <div class="k"><div class="l">Tokyo (HND/NRT)</div><div class="v">—</div></div>
-            <div class="k"><div class="l">Osaka (KIX)</div><div class="v">—</div></div>
-            <div class="k"><div class="l">Weather</div><div class="v">—</div></div>
+        div.innerHTML = `<div class="row"><div class="title">(Working on it)</div><div class="muted">Live fare sweep pending</div></div>`;
+        opts.appendChild(div);
+        return;
+      }
+
+      for (const opt of options) {
+        const tokyo = bestTokyo(opt);
+        const kix = opt.flights?.osaka?.kix;
+
+        const tokyoText = tokyo ? `${fmtUsd(tokyo.priceUsd)} (${tokyo.airline || ''} → ${tokyo.airport})` : '—';
+        const osakaText = (kix && typeof kix.priceUsd === 'number') ? `${fmtUsd(kix.priceUsd)} (${kix.airline || ''})` : '—';
+        const weatherText = opt.weather?.tokyo?.rainNote || '—';
+
+        const div = document.createElement('div');
+        div.className = 'opt';
+        div.innerHTML = `
+          <div class="row">
+            <div class="title">${opt.departDate} → ${opt.returnDate} <span class="muted">(${opt.pattern})</span></div>
+            <div class="muted">${tokyo?.link ? `<a href="${tokyo.link}" target="_blank" rel="noreferrer">Tokyo link</a>` : ''}</div>
           </div>
-          <div class="tags"><span class="tag">will include Fri→Sun and Fri→Mon</span><span class="tag">nonstop only</span></div>`;
+          <div class="kpi">
+            <div class="k"><div class="l">Tokyo best (HND/NRT)</div><div class="v">${tokyoText}</div></div>
+            <div class="k"><div class="l">Osaka (KIX) nonstop</div><div class="v">${(kix && kix.link) ? `<a href="${kix.link}" target="_blank" rel="noreferrer">${osakaText}</a>` : osakaText}</div></div>
+            <div class="k"><div class="l">Weather note</div><div class="v">${weatherText}</div></div>
+          </div>
+          <div class="tags"><span class="tag">nonstop only</span><span class="tag">depart Fri</span><span class="tag">party: 4A+3K</span></div>
+        `;
         opts.appendChild(div);
       }
     }
