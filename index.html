@@ -31,7 +31,7 @@
     h1{margin:0; font-size:22px; letter-spacing:.2px;}
     .sub{color:var(--muted); margin-top:6px; max-width:760px; line-height:1.35;}
     .pill{display:inline-flex; gap:8px; align-items:center; padding:8px 10px; border:1px solid var(--border); border-radius:999px; background:rgba(17,24,39,.65); color:var(--muted); font-size:13px;}
-    .grid{display:grid; grid-template-columns: 1.15fr .85fr; gap:14px; margin-top:16px;}
+    .grid{display:grid; grid-template-columns: 1.2fr .8fr; gap:14px; margin-top:16px;}
     @media (max-width: 900px){ .grid{grid-template-columns:1fr;} }
     .card{border:1px solid var(--border); border-radius:16px; background:linear-gradient(180deg, rgba(17,24,39,.92), rgba(15,23,42,.78)); padding:14px;}
     .card h2{margin:0 0 10px; font-size:15px; color:#fff;}
@@ -50,6 +50,12 @@
     .embed{border:1px dashed rgba(255,255,255,.22); border-radius:14px; padding:12px; color:var(--muted); font-size:13px;}
     .footer{margin-top:16px; color:var(--muted); font-size:12px;}
     .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 12px; border-radius:12px; border:1px solid var(--border); background:rgba(17,24,39,.65); color:var(--text); text-decoration:none; font-size:13px;}
+
+    /* chart */
+    .chartWrap{margin-top:10px; border:1px solid var(--border); border-radius:14px; background:rgba(15,23,42,.45); padding:10px;}
+    svg{width:100%; height:auto; display:block;}
+    .legend{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; color:var(--muted); font-size:12px;}
+    .dot{width:10px; height:10px; border-radius:999px; display:inline-block; margin-right:6px;}
   </style>
 </head>
 <body>
@@ -57,7 +63,7 @@
     <header>
       <div>
         <h1>SFO → Japan (June/July) · 9‑day trip planner</h1>
-        <div class="sub">Nonstop options to <b>Tokyo (HND/NRT)</b> and (if available nonstop) <b>Osaka (KIX)</b>. We’ll shortlist the best Friday‑to‑Sun/Mon 9‑day windows based on live airfare + weather.</div>
+        <div class="sub">Nonstop options to <b>Tokyo (HND/NRT)</b> and (later) <b>Osaka (KIX)</b>. We’re optimizing for lowest fare. Cheapest fares may be basic economy and often <b>exclude bags / seat selection</b>.</div>
         <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
           <span class="pill">Party: 4 adults + 3 kids (11, 6, 3)</span>
           <span class="pill">Depart: Friday</span>
@@ -73,23 +79,37 @@
 
     <div class="grid">
       <section class="card">
-        <h2>Candidate date windows</h2>
-        <div class="note">Each option is Fri departure with a 9‑day trip returning Sun or Mon. Airfare shown is the lowest nonstop fare captured at lookup time (1 adult, round-trip, incl. required taxes/fees). Click through to verify live.</div>
+        <h2>Cheapest windows (Tokyo nonstop)</h2>
+        <div class="note">Ranked by the lowest of (HND, NRT) for each window. Prices are snapshots for 1 adult round-trip (taxes/fees included). Bags may be extra.</div>
+        <div id="top" class="opts"></div>
+
+        <h2 style="margin-top:14px;">Price vs date (Tokyo nonstop)</h2>
+        <div class="note">Visual summary of fare snapshots by departure date. (Lower is better.)</div>
+        <div class="chartWrap">
+          <svg id="chart" viewBox="0 0 1000 260" preserveAspectRatio="none"></svg>
+          <div class="legend">
+            <span><span class="dot" style="background:#38bdf8"></span>NRT (typical cheapest: ZIPAIR)</span>
+            <span><span class="dot" style="background:#ff4d6d"></span>HND</span>
+            <span><span class="dot" style="background:#34d399"></span>Best of HND/NRT</span>
+          </div>
+        </div>
+
+        <h2 style="margin-top:14px;">All candidate date windows</h2>
+        <div class="note">Each option is Fri departure with a 9‑day trip returning Sun or Mon. Click links to verify live pricing.</div>
         <div id="options" class="opts"></div>
-        <div class="footer">Prices can change quickly. We’ll refresh the sweep as we narrow down.</div>
+        <div class="footer">Prices can change quickly. We can refresh the sweep as we narrow down.</div>
       </section>
 
       <aside class="card">
-        <h2>Vote (upvote) + Comments</h2>
-        <div class="note">Friends should be able to vote and leave questions without needing GitHub accounts. I’ll embed a simple poll + comment form here (Tally).</div>
-        <div id="vote" class="embed" style="margin-top:10px;">Poll embed pending (need final form URL).</div>
-        <div id="comments" class="embed" style="margin-top:10px;">Comments embed pending (need final form URL).</div>
+        <h2>Vote + Comments (later)</h2>
+        <div class="note">We can embed a simple Tally poll + comment form when you’re ready. Friends won’t need GitHub accounts.</div>
+        <div class="embed" style="margin-top:10px;">Polling/comments currently disabled.</div>
 
-        <h2 style="margin-top:14px;">Weather cheat sheet (Jun–Jul)</h2>
+        <h2 style="margin-top:14px;">Weather cheat sheet (Jun–Aug)</h2>
         <div class="note">
           <ul>
-            <li><b>Tokyo/Osaka</b>: late Jun/early Jul often overlaps Japan’s rainy season; July tends to be hotter & more humid.</li>
-            <li>We’ll add per-window indicators for heat, humidity, and rain risk to help break ties.</li>
+            <li><b>Tokyo/Osaka</b>: late Jun/early Jul often overlaps rainy season; July/Aug are typically hot & humid.</li>
+            <li>We’ll add icons for heat/humidity/rain once pricing is locked.</li>
           </ul>
         </div>
       </aside>
@@ -103,7 +123,7 @@
     }
 
     function bestTokyo(opt){
-      const c = [];
+      const c=[];
       const hnd = opt.flights?.tokyo?.hnd;
       const nrt = opt.flights?.tokyo?.nrt;
       if (hnd && typeof hnd.priceUsd === 'number') c.push({airport:'HND', ...hnd});
@@ -113,28 +133,37 @@
       return c[0];
     }
 
-    async function main(){
-      const res = await fetch('./data.json', {cache:'no-store'});
-      const data = await res.json();
+    function renderTop(top){
+      const el=document.getElementById('top');
+      el.innerHTML='';
+      for(const opt of top){
+        const tokyo=bestTokyo(opt);
+        const div=document.createElement('div');
+        div.className='opt';
+        div.innerHTML=`
+          <div class="row">
+            <div class="title">${opt.departDate} → ${opt.returnDate} <span class="muted">(${opt.pattern})</span></div>
+            <div class="muted">${tokyo?.link ? `<a href="${tokyo.link}" target="_blank" rel="noreferrer">verify</a>`:''}</div>
+          </div>
+          <div class="kpi">
+            <div class="k"><div class="l">Best Tokyo (HND/NRT)</div><div class="v">${tokyo?`${fmtUsd(tokyo.priceUsd)} (${tokyo.airline||''} → ${tokyo.airport})`:'—'}</div></div>
+            <div class="k"><div class="l">NRT snapshot</div><div class="v">${opt.flights?.tokyo?.nrt?.priceUsd!=null ? fmtUsd(opt.flights.tokyo.nrt.priceUsd) : '—'}</div></div>
+            <div class="k"><div class="l">HND snapshot</div><div class="v">${opt.flights?.tokyo?.hnd?.priceUsd!=null ? fmtUsd(opt.flights.tokyo.hnd.priceUsd) : '—'}</div></div>
+          </div>
+          <div class="tags"><span class="tag">cheapest fare may exclude bags</span></div>
+        `;
+        el.appendChild(div);
+      }
+    }
+
+    function renderAll(options){
       const opts = document.getElementById('options');
       opts.innerHTML = '';
-
-      const options = (data.options || []);
-      if (options.length === 0) {
-        const div = document.createElement('div');
-        div.className = 'opt';
-        div.innerHTML = `<div class="row"><div class="title">(Working on it)</div><div class="muted">Live fare sweep pending</div></div>`;
-        opts.appendChild(div);
-        return;
-      }
-
       for (const opt of options) {
         const tokyo = bestTokyo(opt);
-        const kix = opt.flights?.osaka?.kix;
-
+        const nrt=opt.flights?.tokyo?.nrt;
+        const hnd=opt.flights?.tokyo?.hnd;
         const tokyoText = tokyo ? `${fmtUsd(tokyo.priceUsd)} (${tokyo.airline || ''} → ${tokyo.airport})` : '—';
-        const osakaText = (kix && typeof kix.priceUsd === 'number') ? `${fmtUsd(kix.priceUsd)} (${kix.airline || ''})` : '—';
-        const weatherText = opt.weather?.tokyo?.rainNote || '—';
 
         const div = document.createElement('div');
         div.className = 'opt';
@@ -145,14 +174,157 @@
           </div>
           <div class="kpi">
             <div class="k"><div class="l">Tokyo best (HND/NRT)</div><div class="v">${tokyoText}</div></div>
-            <div class="k"><div class="l">Osaka (KIX) nonstop</div><div class="v">${(kix && kix.link) ? `<a href="${kix.link}" target="_blank" rel="noreferrer">${osakaText}</a>` : osakaText}</div></div>
-            <div class="k"><div class="l">Weather note</div><div class="v">${weatherText}</div></div>
+            <div class="k"><div class="l">NRT</div><div class="v">${(nrt && typeof nrt.priceUsd==='number' && nrt.link) ? `<a href="${nrt.link}" target="_blank" rel="noreferrer">${fmtUsd(nrt.priceUsd)} (${nrt.airline||''})</a>` : (nrt && typeof nrt.priceUsd==='number'? fmtUsd(nrt.priceUsd):'—')}</div></div>
+            <div class="k"><div class="l">HND</div><div class="v">${(hnd && typeof hnd.priceUsd==='number' && hnd.link) ? `<a href="${hnd.link}" target="_blank" rel="noreferrer">${fmtUsd(hnd.priceUsd)} (${hnd.airline||''})</a>` : (hnd && typeof hnd.priceUsd==='number'? fmtUsd(hnd.priceUsd):'—')}</div></div>
           </div>
-          <div class="tags"><span class="tag">nonstop only</span><span class="tag">depart Fri</span><span class="tag">party: 4A+3K</span></div>
+          <div class="tags"><span class="tag">nonstop only</span><span class="tag">bags may be extra</span></div>
         `;
         opts.appendChild(div);
       }
     }
+
+    function drawChart(options){
+      const svg=document.getElementById('chart');
+      svg.innerHTML='';
+
+      // group by departDate, take min price per airport
+      const byDate=new Map();
+      for(const o of options){
+        if(!byDate.has(o.departDate)) byDate.set(o.departDate, {departDate:o.departDate, nrt:[], hnd:[], best:[]});
+        const row=byDate.get(o.departDate);
+        const nrt=o.flights?.tokyo?.nrt?.priceUsd;
+        const hnd=o.flights?.tokyo?.hnd?.priceUsd;
+        if(typeof nrt==='number') row.nrt.push(nrt);
+        if(typeof hnd==='number') row.hnd.push(hnd);
+        const bt=bestTokyo(o);
+        if(bt && typeof bt.priceUsd==='number') row.best.push(bt.priceUsd);
+      }
+      const rows=[...byDate.values()].sort((a,b)=>a.departDate.localeCompare(b.departDate)).map(r=>({
+        departDate:r.departDate,
+        nrt: r.nrt.length? Math.min(...r.nrt): null,
+        hnd: r.hnd.length? Math.min(...r.hnd): null,
+        best: r.best.length? Math.min(...r.best): null,
+      }));
+
+      const prices=[];
+      for(const r of rows){
+        for(const k of ['nrt','hnd','best']) if(typeof r[k]==='number') prices.push(r[k]);
+      }
+      if(!prices.length) return;
+      const minP=Math.min(...prices);
+      const maxP=Math.max(...prices);
+
+      const W=1000, H=260;
+      const pad={l:60,r:20,t:20,b:40};
+      const innerW=W-pad.l-pad.r;
+      const innerH=H-pad.t-pad.b;
+
+      const x=(i)=> pad.l + (rows.length===1? innerW/2 : (i*(innerW/(rows.length-1))));
+      const y=(p)=> pad.t + (maxP===minP? innerH/2 : ((maxP-p)/(maxP-minP))*innerH);
+
+      function line(path, stroke){
+        const el=document.createElementNS('http://www.w3.org/2000/svg','path');
+        el.setAttribute('d', path);
+        el.setAttribute('fill','none');
+        el.setAttribute('stroke', stroke);
+        el.setAttribute('stroke-width','2');
+        el.setAttribute('opacity','0.9');
+        svg.appendChild(el);
+      }
+
+      function series(key, color){
+        let d='';
+        rows.forEach((r,i)=>{
+          const p=r[key];
+          if(typeof p!=='number') return;
+          const xx=x(i), yy=y(p);
+          d += (d? ' L ':'M ') + xx + ' ' + yy;
+          // dot
+          const c=document.createElementNS('http://www.w3.org/2000/svg','circle');
+          c.setAttribute('cx', xx);
+          c.setAttribute('cy', yy);
+          c.setAttribute('r', 4);
+          c.setAttribute('fill', color);
+          svg.appendChild(c);
+        });
+        if(d) line(d, color);
+      }
+
+      // axes
+      const ax=document.createElementNS('http://www.w3.org/2000/svg','line');
+      ax.setAttribute('x1', pad.l);
+      ax.setAttribute('y1', pad.t);
+      ax.setAttribute('x2', pad.l);
+      ax.setAttribute('y2', pad.t+innerH);
+      ax.setAttribute('stroke','rgba(255,255,255,.25)');
+      svg.appendChild(ax);
+
+      const ax2=document.createElementNS('http://www.w3.org/2000/svg','line');
+      ax2.setAttribute('x1', pad.l);
+      ax2.setAttribute('y1', pad.t+innerH);
+      ax2.setAttribute('x2', pad.l+innerW);
+      ax2.setAttribute('y2', pad.t+innerH);
+      ax2.setAttribute('stroke','rgba(255,255,255,.25)');
+      svg.appendChild(ax2);
+
+      // y labels
+      const ticks=4;
+      for(let i=0;i<=ticks;i++){
+        const p=minP + (i*(maxP-minP)/ticks);
+        const yy=y(p);
+        const t=document.createElementNS('http://www.w3.org/2000/svg','text');
+        t.setAttribute('x', 10);
+        t.setAttribute('y', yy+4);
+        t.setAttribute('fill','rgba(229,231,235,.75)');
+        t.setAttribute('font-size','12');
+        t.textContent = fmtUsd(Math.round(p));
+        svg.appendChild(t);
+
+        const g=document.createElementNS('http://www.w3.org/2000/svg','line');
+        g.setAttribute('x1', pad.l);
+        g.setAttribute('x2', pad.l+innerW);
+        g.setAttribute('y1', yy);
+        g.setAttribute('y2', yy);
+        g.setAttribute('stroke','rgba(255,255,255,.08)');
+        svg.appendChild(g);
+      }
+
+      // x labels
+      rows.forEach((r,i)=>{
+        const t=document.createElementNS('http://www.w3.org/2000/svg','text');
+        t.setAttribute('x', x(i));
+        t.setAttribute('y', pad.t+innerH+24);
+        t.setAttribute('fill','rgba(229,231,235,.65)');
+        t.setAttribute('font-size','11');
+        t.setAttribute('text-anchor','middle');
+        t.textContent = r.departDate.slice(5);
+        svg.appendChild(t);
+      });
+
+      // series
+      series('nrt', '#38bdf8');
+      series('hnd', '#ff4d6d');
+      series('best', '#34d399');
+    }
+
+    async function main(){
+      const res = await fetch('./data.json', {cache:'no-store'});
+      const data = await res.json();
+      const options = (data.options || []);
+
+      // top 5 cheapest
+      const ranked=[...options].filter(o=>bestTokyo(o)?.priceUsd!=null);
+      ranked.sort((a,b)=>bestTokyo(a).priceUsd - bestTokyo(b).priceUsd);
+      renderTop(ranked.slice(0,5));
+
+      // chart is based on all options
+      drawChart(options);
+
+      // show all windows sorted by depart date then return
+      const all=[...options].sort((a,b)=> (a.departDate+a.returnDate).localeCompare(b.departDate+b.returnDate));
+      renderAll(all);
+    }
+
     main();
   </script>
 </body>
